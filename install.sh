@@ -2,6 +2,7 @@
 
 function install_script {
     mkdir /opt/kintaro
+    mkdir /home/pi
     cp -i pcb.py /opt/kintaro/pcb.py
     rm -f /home/pi/kintarosetup.py
     cp -R start /opt/kintaro/start
@@ -9,7 +10,7 @@ function install_script {
     useradd -r -s /bin/false kintaro
     chown -R kintaro:kintaro /opt/kintaro
     cp -i kintaro.service /etc/systemd/system/kintaro.service
-    cp -i kintaro-config.sh /home/pi/RetroPie-Setup/scriptmodules/supplementary/kintaro-config.sh
+    cp -i kintaro-config.sh /home/pi/kintaro-config.sh
     systemctl daemon-reload
     systemctl enable kintaro
     
